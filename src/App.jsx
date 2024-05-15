@@ -1,9 +1,9 @@
-import { logo } from "./assets/pokiswipe-logo.png";
+import Navbar from "./components/Navbar/Navbar";
 
 function App() {
   return (
-    <div className="bg-gray-400 min-h-screen">
-      <img src={logo} alt="pokiswipe_logo" width="200px" />
+    <div className="bg-gray-500 min-h-screen">
+      <Navbar />
     </div>
   );
 }
