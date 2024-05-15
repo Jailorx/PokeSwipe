@@ -6,6 +6,9 @@ export default {
       fontFamily: {
         custom: ["Comic Sans MS", "sans"], // Replace 'YourCustomFont' with your font name
       },
+      colors: {
+        "custom-blue": "#3399ff",
+      },
     },
   },
   plugins: [],

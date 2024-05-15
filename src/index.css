@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.homeBtn {
+  @apply bg-transparent text-xl rounded-full uppercase p-2 border-2 border-black py-3 px-5 hover:bg-custom-blue;
+}
