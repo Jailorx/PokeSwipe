@@ -5,3 +5,7 @@
 .homeBtn {
   @apply bg-transparent text-xl rounded-full uppercase p-2 border-2 border-black py-3 px-5 hover:bg-custom-blue;
 }
+
+.choiceBtn {
+  @apply text-xl rounded-full border-2 py-3 px-6 font-bold text-white;
+}
