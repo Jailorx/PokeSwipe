@@ -7,7 +7,10 @@ const Card = ({ info }) => {
 
   return (
     <div className="flex flex-col justify-center  gap-3">
-      <img src={image} alt={`${name}_image`} width="300px" />
+      <div className="max-w-[400px] mx-auto">
+        <img className="w-full" src={image} alt={`${name}_image`} />
+      </div>
+
       <h1 className="text-4xl text-center mb-5">{name.toUpperCase()}</h1>
 
       <div className="flex justify-center items-center gap-2">
