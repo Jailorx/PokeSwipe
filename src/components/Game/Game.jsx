@@ -15,6 +15,12 @@ const Game = () => {
     return Math.floor(Math.random() * total) + 1;
   };
 
+  const handleNextPokemon = () => {
+    const random = randomIdGenerator();
+    setPokemonId(random);
+    fetchData(random);
+  };
+
   const fetchData = async (id) => {
     console.log("id:", id);
 
@@ -35,15 +41,15 @@ const Game = () => {
   };
 
   useEffect(() => {
-    const random = randomIdGenerator();
-    setPokemonId(random);
-    fetchData(random);
-  }, []);
+    if (pokemonId === null) {
+      handleNextPokemon();
+    }
+  }, [pokemonId]);
 
   return (
     <main className="flex-1 flex items-center justify-center">
       <div className="flex flex-col items-center space-y-4">
-        <Card info={pokemon} />
+        <Card info={pokemon} nextPokemon={handleNextPokemon} />
       </div>
     </main>
   );
