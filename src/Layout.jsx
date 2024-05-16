@@ -1,12 +1,12 @@
 import React from "react";
 
-import Navbar from "./components/Navbar/Navbar";
+import Header from "./components/Header/Header";
 import { Outlet } from "react-router-dom";
 
 const Layout = () => {
   return (
     <div className="bg-gray-400 min-h-screen flex flex-col">
-      <Navbar />
+      <Header />
       <Outlet />
     </div>
   );
