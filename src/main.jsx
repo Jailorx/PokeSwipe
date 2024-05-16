@@ -13,6 +13,8 @@ import Home from "./components/Home/Home.jsx";
 import Game from "./components/Game/Game.jsx";
 import Favorites from "./components/Favorites/Favorites.jsx";
 
+import { LikeContextProvider } from "./context/LikeContext.jsx";
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
@@ -25,8 +27,10 @@ const router = createBrowserRouter(
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <div className="font-custom">
-      <RouterProvider router={router} />
-    </div>
+    <LikeContextProvider>
+      <div className="font-custom">
+        <RouterProvider router={router} />
+      </div>
+    </LikeContextProvider>
   </React.StrictMode>
 );
