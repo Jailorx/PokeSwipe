@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Card from "../Card/Card";
 
 const Game = () => {
   const [pokemonId, setPokemonId] = useState(null);
@@ -14,13 +15,10 @@ const Game = () => {
     return Math.floor(Math.random() * total) + 1;
   };
 
-  const fetchData = async () => {
-    const random = randomIdGenerator();
-    setPokemonId(random);
+  const fetchData = async (id) => {
+    console.log("id:", id);
 
-    const response = await fetch(
-      `https://pokeapi.co/api/v2/pokemon/${pokemonId}`
-    );
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
     const data = await response.json();
 
     const abilities = data.abilities.map((ability) => ability.ability.name);
@@ -28,22 +26,24 @@ const Game = () => {
     setPokemon((prevState) => ({
       ...prevState,
       name: data.name,
-      image: data.sprites.other.dream_world,
+      image: data.sprites.other.dream_world.front_default
+        ? data.sprites.other.dream_world.front_default
+        : data.sprites.other.home.front_default,
       types: data.types.map((type) => type.type.name),
       abilities: abilities,
     }));
-
-    console.log("pokemon:", pokemon);
   };
 
   useEffect(() => {
-    fetchData();
+    const random = randomIdGenerator();
+    setPokemonId(random);
+    fetchData(random);
   }, []);
 
   return (
     <main className="flex-1 flex items-center justify-center">
       <div className="flex flex-col items-center space-y-4">
-        <h1>Welcome to the game</h1>
+        <Card info={pokemon} />
       </div>
     </main>
   );
