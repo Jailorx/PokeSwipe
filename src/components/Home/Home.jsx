@@ -6,7 +6,7 @@ const Home = () => {
         <Link className="homeBtn " to="/game">
           Play
         </Link>
-        <Link className="homeBtn " to="">
+        <Link className="homeBtn " to="/favorites">
           Favorites
         </Link>
       </div>
