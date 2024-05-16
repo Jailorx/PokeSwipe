@@ -1,6 +1,6 @@
 import React from "react";
-import Choice_Button from "../Choice_Button/Choice_Button";
-import Attribute from "../Attribute/Attribute";
+import Choice_Button from "./Choice_Button/Choice_Button";
+import Attribute from "./Attribute/Attribute";
 
 const Card = ({ info }) => {
   const { name, abilities, types, image } = info;
