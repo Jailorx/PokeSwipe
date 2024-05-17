@@ -9,7 +9,7 @@ const Navbar = () => {
   const { theme, _ } = useTheme();
   return (
     <nav
-      className={`h-20 flex justify-around items-center p-2 shadow shadow-bottom ${theme}`}
+      className={`h-20 flex justify-around items-center p-2 shadow-lg ${theme}`}
     >
       <Link to="/">
         <img src={Logo} alt="pokiswipe_logo" width="200px" />
