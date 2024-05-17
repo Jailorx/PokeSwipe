@@ -1,4 +1,4 @@
-import Logo from "../../assets/pokiswipe-logo.png";
+import Logo from "../../assets/pokeswipe-logo.png";
 
 import { Link } from "react-router-dom";
 
