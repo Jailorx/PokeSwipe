@@ -12,7 +12,7 @@ import React from "react";
 const Choice_Button = ({ choice, onClick }) => {
   return (
     <button
-      className={`choiceBtn ${
+      className={`choiceBtn  transform transition-transform duration-300 hover:scale-110 ${
         choice === "Like" ? "bg-green-600" : "bg-red-600"
       }`}
       onClick={onClick}

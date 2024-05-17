@@ -38,15 +38,13 @@ const Card = ({ info, nextPokemon }) => {
 
   return (
     <div className="flex flex-col justify-center gap-3 min-w-[250px] mx-auto p-3 ">
-      {theme ? (
-        <Link to="/favorites">
-          <FaHeart size={50} />
-        </Link>
-      ) : (
-        <Link to="/favorites">
-          <FaRegHeart size={50} />
-        </Link>
-      )}
+      <Link to="/favorites">
+        <FaHeart
+          size={50}
+          color="#DE3163"
+          className="transform transition-transform duration-250 hover:scale-110"
+        />
+      </Link>
 
       <div className="max-w-[250px] mx-auto">
         <img className="w-full" src={image} alt={`${name}_image`} />
