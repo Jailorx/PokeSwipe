@@ -23,7 +23,7 @@ const Card = ({ info, nextPokemon }) => {
   };
 
   return (
-    <div className="flex flex-col justify-center gap-3 ">
+    <div className="flex flex-col justify-center gap-3 min-w-[250px] mx-auto p-3 ">
       {theme ? (
         <Link to="/favorites">
           <FaHeart size={50} />
@@ -34,20 +34,20 @@ const Card = ({ info, nextPokemon }) => {
         </Link>
       )}
 
-      <div className="max-w-[300px] mx-auto">
+      <div className="max-w-[250px] mx-auto">
         <img className="w-full" src={image} alt={`${name}_image`} />
       </div>
 
       <h1 className="text-4xl text-center mb-5">{name.toUpperCase()}</h1>
 
-      <div className="flex justify-center items-center gap-2">
+      <div className="flex flex-wrap justify-center items-center gap-2">
         {/* traversing types array */}
         {types.map((type) => (
-          <Attribute value={type} />
+          <Attribute key={type} value={type} />
         ))}
         {/* traversing abilities array */}
         {abilities.map((ability) => (
-          <Attribute type="ability" value={ability} />
+          <Attribute key={ability} type="ability" value={ability} />
         ))}
       </div>
 
