@@ -7,17 +7,31 @@ import { Link } from "react-router-dom";
 import { FaRegHeart } from "react-icons/fa";
 import { useTheme } from "../../context/ThemeContext";
 
+/**
+ * Card component to display information about a Pokemon.
+ *
+ * @param {object} props - Component props
+ * @param {object} props.info - Information about the Pokemon (name, abilities, types, image)
+ * @param {Function} props.nextPokemon - Function to display the next Pokemon
+ *
+ */
+
 const Card = ({ info, nextPokemon }) => {
+  //Destructuring info object
   const { name, abilities, types, image } = info;
 
-  const { __, addLikedPokemon } = useData();
-  const { theme, _ } = useTheme();
+  //Accessing data from LikeContext
+  const { addLikedPokemon } = useData();
+  //Accessing data from ThemeContext
+  const { theme } = useTheme();
 
+  //Handles liking a pokemon
   const handleLikedPokemon = (name, image) => {
     const pokemon = { name, image };
     addLikedPokemon(pokemon);
     nextPokemon();
   };
+  //Handles disliking a pokemon
   const handleDislikedPokemon = () => {
     nextPokemon();
   };

@@ -4,8 +4,15 @@ import Card from "./Card/Card";
 import { useTheme } from "../../context/ThemeContext";
 import { TfiFaceSad } from "react-icons/tfi";
 
+/**
+ * Favorites component to display list of liked/favorite Pokemon.
+ *
+ */
+
 const Favorites = () => {
-  const { theme, _ } = useTheme();
+  //Accessing data from ThemeContext
+  const { theme } = useTheme();
+  //Accessing data from LikeContext
   const { likedPokemons } = useData();
 
   return (

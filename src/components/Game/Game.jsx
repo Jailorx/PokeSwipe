@@ -4,8 +4,16 @@ import { useTheme } from "../../context/ThemeContext";
 import Instructions from "./Instructions/Instructions";
 import PuffLoader from "react-spinners/PuffLoader";
 
+/**
+ *
+ * Game component displays one random Pokemon at a time
+ */
+
 const Game = () => {
-  const { theme, _ } = useTheme();
+  //Accessing data from themeContext
+  const { theme } = useTheme();
+
+  //Storing local state of the component
   const [pokemonId, setPokemonId] = useState(null);
   const [pokemon, setPokemon] = useState({
     image: "",
@@ -14,18 +22,22 @@ const Game = () => {
     abilities: [],
   });
 
+  //Loading state
   const [loading, setLoading] = useState(false);
 
+  //Instruction state
   const [openInstructions, setOpenInstructions] = useState(true);
   const handleInstructions = () => {
     setOpenInstructions((prevState) => !prevState);
   };
 
+  //Generates a random ID between 1 and 1025
   const randomIdGenerator = () => {
     const total = 1025;
     return Math.floor(Math.random() * total) + 1;
   };
 
+  //Handles next pokemon generation
   const handleNextPokemon = () => {
     setLoading(true);
     const random = randomIdGenerator();
@@ -33,6 +45,7 @@ const Game = () => {
     fetchData(random);
   };
 
+  //Fetch data from api for generated ID
   const fetchData = async (id) => {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
     const data = await response.json();

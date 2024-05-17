@@ -2,9 +2,21 @@ import React from "react";
 import { useTheme } from "../../../context/ThemeContext";
 import { useData } from "../../../context/LikeContext";
 
+/**
+ * Card component to display information about a liked Pokemon.
+ *
+ * @param {object} props - Component props
+ * @param {string} props.name - Name of the Pokemon
+ * @param {string} props.image - Image of the pokemon
+ *
+ */
+
 const Card = ({ name, image }) => {
+  //Accessing data from ThemeContext
   const { theme } = useTheme();
+  //Accessing data from LikeContext
   const { removeLikedPokemon } = useData();
+
   return (
     <div className="my-4 mx-4">
       <div>

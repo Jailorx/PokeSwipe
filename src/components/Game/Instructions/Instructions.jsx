@@ -1,8 +1,15 @@
 import React from "react";
 import { useTheme } from "../../../context/ThemeContext";
+/**
+ *
+ * @param {object} props - Component props
+ * @param {object} props.onClick -Function to close Instruction
+ *
+ */
+const Instruction = ({ onClick }) => {
+  //Accessing data from ThemeContext
+  const { theme } = useTheme();
 
-const Modal = ({ onClick }) => {
-  const { theme, _ } = useTheme();
   return (
     <div
       className={`flex-1 flex items-center justify-center ${theme} bg-gray-800 bg-opacity-20`}
@@ -27,4 +34,4 @@ const Modal = ({ onClick }) => {
   );
 };
 
-export default Modal;
+export default Instruction;
