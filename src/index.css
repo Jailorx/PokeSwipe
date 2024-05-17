@@ -7,7 +7,7 @@
 }
 
 .homeBtn {
-  @apply bg-transparent text-xl rounded-full uppercase  border-2 border-black py-3 px-5 hover:bg-custom-blue;
+  @apply bg-transparent text-3xl uppercase font-bold  border-2 border-black py-3 px-5 hover:bg-yellow-400 hover:text-blue-600 hover:border-blue-600 border-4;
 }
 
 .choiceBtn {

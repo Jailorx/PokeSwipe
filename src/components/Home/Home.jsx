@@ -4,7 +4,7 @@ const Home = () => {
   const { theme, _ } = useTheme();
   return (
     <main className={`flex-1 flex items-center justify-center ${theme}`}>
-      <div className="flex flex-col items-center space-y-4">
+      <div className="flex flex-col items-center space-y-4 gap-3">
         <Link className="homeBtn " to="/game">
           Play
         </Link>
