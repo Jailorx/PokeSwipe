@@ -2,6 +2,7 @@ import React from "react";
 import { useData } from "../../context/LikeContext";
 import Card from "./Card/Card";
 import { useTheme } from "../../context/ThemeContext";
+import { TfiFaceSad } from "react-icons/tfi";
 
 const Favorites = () => {
   const { theme, _ } = useTheme();
@@ -16,7 +17,10 @@ const Favorites = () => {
           ))}
         </div>
       ) : (
-        "Please add Pokemon first. Gotta Catch em All"
+        <div className="flex flex-col justify-center items-center gap-3">
+          <TfiFaceSad size={150} />
+          <p className="text-xl font-bold">Wow! So empty</p>
+        </div>
       )}
     </div>
   );
