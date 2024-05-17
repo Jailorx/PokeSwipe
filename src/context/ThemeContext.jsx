@@ -1,11 +1,18 @@
-import React, { createContext, useState, useContext } from "react";
+import React, { createContext, useState, useContext, useEffect } from "react";
 
 // Creating a context for managing theme
 const ThemeContext = createContext();
 
 // Provider component for managing theme state and actions
 export const ThemeContextProvider = ({ children }) => {
-  const [theme, setTheme] = useState("");
+  const [theme, setTheme] = useState(() => {
+    // Get the initial theme from localStorage if available
+    return localStorage.getItem("theme") || "";
+  });
+
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+  }, [theme]);
 
   //Handles changing of theme
   const handleThemeChange = () => {
