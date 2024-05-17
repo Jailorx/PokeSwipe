@@ -4,7 +4,7 @@ import Attribute from "./Attribute/Attribute";
 import { useData } from "../../context/LikeContext";
 import { FaHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { FaRegHeart } from "react-icons/fa";
+import { MdCatchingPokemon } from "react-icons/md";
 import { useTheme } from "../../context/ThemeContext";
 
 /**
@@ -39,7 +39,7 @@ const Card = ({ info, nextPokemon }) => {
   return (
     <div className="flex flex-col justify-center gap-3 min-w-[250px] mx-auto p-3 ">
       <Link to="/favorites">
-        <FaHeart
+        <MdCatchingPokemon
           size={50}
           color="#DE3163"
           className="transform transition-transform duration-250 hover:scale-110"
