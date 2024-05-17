@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Card from "../Card/Card";
+import { useTheme } from "../../context/ThemeContext";
 
 const Game = () => {
+  const { theme, _ } = useTheme();
   const [pokemonId, setPokemonId] = useState(null);
   const [pokemon, setPokemon] = useState({
     image: "",
@@ -47,7 +49,7 @@ const Game = () => {
   }, [pokemonId]);
 
   return (
-    <main className="flex-1 flex items-center justify-center">
+    <main className={`flex-1 flex items-center justify-center ${theme}`}>
       <div className="flex flex-col items-center space-y-4">
         <Card info={pokemon} nextPokemon={handleNextPokemon} />
       </div>
