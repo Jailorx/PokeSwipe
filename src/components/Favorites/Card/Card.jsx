@@ -27,7 +27,7 @@ const Card = ({ name, image }) => {
           X
         </button>
         <div
-          className={`h-80 w-80  flex flex-col justify-center items-center border-2 border-black rounded-3xl p-2 ${
+          className={`h-80 w-80  flex flex-col justify-center items-center border-2 border-black rounded-3xl p-2  ${
             theme ? "bg-gray-400" : "bg-gray-500"
           }`}
         >
