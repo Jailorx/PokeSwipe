@@ -13,10 +13,10 @@ const Game = () => {
     abilities: [],
   });
 
-  const [openModal, setOpenModal] = useState(true);
-  const handleModal = () => {
+  const [openInstructions, setOpenInstructions] = useState(true);
+  const handleInstructions = () => {
     console.log("modal clicked");
-    setOpenModal((prevState) => !prevState);
+    setOpenInstructions((prevState) => !prevState);
   };
 
   const randomIdGenerator = () => {
@@ -57,8 +57,8 @@ const Game = () => {
 
   return (
     <>
-      {openModal ? (
-        <Instructions onClick={handleModal} />
+      {openInstructions ? (
+        <Instructions onClick={handleInstructions} />
       ) : (
         <main className={`flex-1 flex items-center justify-center ${theme}`}>
           <div className="flex flex-col items-center space-y-4">
