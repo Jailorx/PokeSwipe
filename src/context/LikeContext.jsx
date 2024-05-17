@@ -13,11 +13,23 @@ export const LikeContextProvider = ({ children }) => {
     });
   };
 
+  const removeLikedPokemon = (deletePokemon) => {
+    const allPokemons = new Set(likedPokemons);
+    for (let pokemon of allPokemons) {
+      if (pokemon.name === deletePokemon) {
+        allPokemons.delete(pokemon);
+        break;
+      }
+    }
+    setLikedPokemons(allPokemons);
+  };
+
   return (
     <LikeContext.Provider
       value={{
         likedPokemons: Array.from(likedPokemons),
         addLikedPokemon,
+        removeLikedPokemon,
       }}
     >
       {children}
