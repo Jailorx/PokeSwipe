@@ -14,9 +14,11 @@ const Instruction = ({ onClick }) => {
     <div
       className={`flex-1 flex items-center justify-center ${theme} bg-gray-800 bg-opacity-20`}
     >
-      <div className="flex flex-col items-center space-y-4 gap-3 border-2 border-black p-20 rounded-2xl bg-gray-300">
+      <div className="flex flex-col items-center space-y-4 gap-3 border-2 border-black p-20 rounded-2xl bg-gray-300 m-3">
         <div>
-          <h1 className="text-2xl font-bold mb-3">How to Play PokeSwipe</h1>
+          <h1 className="text-2xl font-bold mb-3 text-center">
+            How to Play PokeSwipe
+          </h1>
           <div className="text-xl text-center">
             <p>Pokemon Appear One at a Time </p>
             <p>Choose "Like" or "Dislike"</p>
